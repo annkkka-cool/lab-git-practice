@@ -1,3 +1,3 @@
-app_name = "LabApp"
+app_name = "СуперApp"
 version = "1.0"
 author = "Person2"
