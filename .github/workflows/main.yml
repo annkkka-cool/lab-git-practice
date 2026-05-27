@@ -22,3 +22,14 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest discover -s person1 -p "*.py"
+    - name: Generate documentation
+      run: |
+        mkdir docs
+        python -m pydoc -w person1.utils > docs/utils.html
+        python -m pydoc -w person1.test_utils > docs/test_utils.html
+    
+    - name: Upload documentation
+      uses: actions/upload-artifact@v4
+      with:
+        name: documentation
+        path: docs/
