@@ -25,8 +25,17 @@ jobs:
     - name: Generate documentation
       run: |
         mkdir docs
-        python -m pydoc -w person1.utils > docs/utils.html
-        python -m pydoc -w person1.test_utils > docs/test_utils.html
+        echo "# API Documentation" > docs/README.md
+        echo "## Functions" >> docs/README.md
+        echo "- add(a, b): returns a + b" >> docs/README.md
+        echo "- multiply(a, b): returns a * b" >> docs/README.md
+        echo "" >> docs/README.md
+        echo "## Tests" >> docs/README.md
+        echo "- test_add: проверяет сложение" >> docs/README.md
+        echo "- test_multiply: проверяет умножение" >> docs/README.md
+        echo "" >> docs/README.md
+        echo "## CI/CD" >> docs/README.md
+        echo "Проект использует GitHub Actions для автоматического тестирования и генерации документации." >> docs/README.md
     
     - name: Upload documentation
       uses: actions/upload-artifact@v4
